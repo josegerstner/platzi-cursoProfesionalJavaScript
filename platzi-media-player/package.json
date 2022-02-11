@@ -1,0 +1,16 @@
+{
+  "name": "platzi-media-player",
+  "version": "1.0.0",
+  "description": "Proyecto del curso profesional de JavaScript",
+  "license": "MIT",
+  "author": "José Gerstner <grn.jose@yahoo.com.ar>",
+  "keywords": [
+    "platzi"
+  ],
+  "scripts": {
+    "start": "live-server"
+  },
+  "devDependencies": {
+    "live-server": "^1.1.0"
+  }
+}
