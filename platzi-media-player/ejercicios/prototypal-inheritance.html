@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/favicon.png" type="image/x-icon">
+        <title>Prototypal Inheritance</title>
+    </head>
+    <body>
+        <a href="/ejercicios/">Go back</a>
+
+        <p><em>Abre la consola</em></p>
+
+        <p>SomeObject.prototype es un objeto donde definimos el prototipo de las instancias de SomeObject. Es decir, las instancias SomeObject van a "heredar" de SomeObject prototype.</p>
+
+        <p>SomeObject.[[Prototype]] es el prototipo de SomeObject. Es decir, SomeObject "hereda" de SomeObject.prototype.</p>
+
+        <script>
+            function Hero(name) {
+                this.name = name;
+            }
+            Hero.prototype.saludar = function() {
+                console.log(`Hola soy ${this.name}`);
+            };
+            const zelda = new Hero("Zelda");
+
+            // propiedades de la instancia
+            console.log("Name: ", zelda.name);
+
+            // propiedades de la "clase"
+            console.log("Saludar: ", zelda.saludar);
+
+            // propiedades heredadas ej: toString
+            console.log("toString: ", zelda.toString);
+
+            // hasOwnProperty (de dónde sale toString o esto?)
+            console.log('zelda.hasOwnProperty("name"): ', zelda.hasOwnProperty("name"));
+
+            // inspeccionemos el prototipo Zelda
+            // inspeccionemos el prototipo Hero
+            // inspeccionemos el prototipo Object
+
+
+
+            // hicimos algunas pruebas en la consola
+            // para acceder al prototipo de zelda
+            // en el navegador vimos que podemos utilizar zelda.__proto__
+            // sin embargo, este proto puede cambiar tanto por Node, como por los Browsers
+            // lo recomendado es usar
+            // Object.getPrototypeOf(zelda)
+            // si lo guardamos en una variable y lo comparamos con Hero.prototype
+            // const prototypeOfZelda = Object.getPrototypeOf(zelda)
+            // prototypeOfZelda === Hero.prototype
+            // da TRUE porque esos objetos son idénticos (es el mismo objeto)
+        </script>
+    </body>
+</html>
